@@ -45,16 +45,16 @@ namespace
 
     void go(std::istringstream & iss){
         std::string dummy;
-        uint64_t wtime;
-        uint64_t btime;
-        uint64_t winc;
-        uint64_t binc;
+        int wtime;
+        int btime;
+        int winc;
+        int binc;
         iss >> dummy >> wtime >> dummy >> btime >> dummy >> winc >> dummy >> binc;
 
-        auto bm = bestMove(wtime, btime, winc, binc);
+        auto bestmove = findBestMove(current_board, wtime, btime, winc, binc);
 
-        std::cout << "info score cp " << bm.eval << "\n";
-        std::cout << "bestmove " << chess::uci::moveToUci(bm.move) << "\n";
+        std::cout << "info score cp " << bestmove.score << "\n";
+        std::cout << "bestmove " << chess::uci::moveToUci(bestmove.move) << "\n";
     }
 }
 
@@ -66,7 +66,7 @@ void parse_command(std::string &line)
     if (command == "uci")
     {
         // @TODO: separate function
-        std::cout << "id Kockasfulu-mk2\n"; // @TODO: add options
+        std::cout << "id name Kockasfulu-mk2\n"; // @TODO: add options
         std::cout
             << "uciok\n";
     }
