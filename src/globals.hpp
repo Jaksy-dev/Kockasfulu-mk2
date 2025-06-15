@@ -3,4 +3,4 @@
 
 extern chess::Board current_board;
 
-constexpr auto DEPTH = 4;
+constexpr auto DEPTH = 6;

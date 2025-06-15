@@ -28,7 +28,7 @@ target_link_libraries(Kockasfulu-mk2 PRIVATE chess)
 target_compile_options(Kockasfulu-mk2 PRIVATE
     -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wfloat-equal -Wundef
     -Wpointer-arith -Wcast-align -Wwrite-strings
- -Wcast-qual -Wswitch-default -Wswitch-enum
+    -Wcast-qual -Wswitch-default -Wswitch-enum
     -Wunreachable-code -Wformat=2 -Werror
     -Ofast 
     -flto
